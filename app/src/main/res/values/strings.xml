@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Game Suit Ver 2</string>
+    <string name="text_previous">previous</string>
+    <string name="text_next">next</string>
+    <string name="hint">Put Your Name</string>
+    <string name="btn_setname">Set Name</string>
+</resources>
