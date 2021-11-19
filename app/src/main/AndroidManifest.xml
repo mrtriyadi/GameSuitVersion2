@@ -11,16 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GameSuitVer2">
-        <activity android:name="com.app.gamesuitver2.ui.game.Game"></activity>
-        <activity android:name="com.app.gamesuitver2.ui.activity.Menu" />
-        <activity android:name="com.app.gamesuitver2.ui.activity.SplashScreen">
+        <activity android:name=".ui.activity.RegisterActivity"></activity>
+        <activity android:name=".ui.activity.LoginActivity" />
+        <activity android:name=".ui.activity.Game" />
+        <activity android:name=".ui.activity.Menu" />
+        <activity android:name=".ui.activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.app.gamesuitver2.ui.activity.MainActivity" />
+        <activity android:name=".ui.activity.MainActivity" />
     </application>
 
 </manifest>

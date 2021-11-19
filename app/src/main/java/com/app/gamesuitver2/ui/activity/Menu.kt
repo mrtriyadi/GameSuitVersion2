@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.gamesuitver2.databinding.ActivityMenuBinding
 import com.google.android.material.snackbar.Snackbar
-import com.app.gamesuitver2.ui.game.Game
 
 class Menu : AppCompatActivity() {
     private lateinit var binding: ActivityMenuBinding

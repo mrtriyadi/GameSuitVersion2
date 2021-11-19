@@ -1,4 +1,4 @@
-package com.app.gamesuitver2.ui.game
+package com.app.gamesuitver2.ui.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -13,7 +13,6 @@ import com.app.gamesuitver2.databinding.ActivityGameBinding
 import com.app.gamesuitver2.databinding.LayoutCustomDialogBinding
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
-import com.app.gamesuitver2.ui.activity.Menu
 import kotlin.system.exitProcess
 
 class Game : AppCompatActivity() {
