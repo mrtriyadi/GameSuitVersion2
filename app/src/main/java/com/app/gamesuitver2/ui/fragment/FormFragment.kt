@@ -8,8 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.app.gamesuitver2.databinding.FragmentFormBinding
 import com.app.gamesuitver2.ui.activity.DashboardActivity
+import com.app.gamesuitver2.ui.base.BaseFragment
 
-class FormFragment : Fragment() {
+class FormFragment : BaseFragment() {
 
     private lateinit var binding: FragmentFormBinding
 

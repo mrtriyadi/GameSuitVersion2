@@ -6,12 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.app.gamesuitver2.databinding.FragmentSliderBinding
+import com.app.gamesuitver2.ui.base.BaseFragment
 
 
 class SliderFragment(
     private val desc: String,
     private val imgSrc: Int
-) : Fragment() {
+) : BaseFragment() {
 
     private lateinit var binding: FragmentSliderBinding
 

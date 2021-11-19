@@ -8,11 +8,12 @@ import androidx.viewpager2.widget.ViewPager2
 import com.app.gamesuitver2.R
 import com.app.gamesuitver2.databinding.ActivityLandingBinding
 import com.app.gamesuitver2.databinding.FragmentFormBinding
+import com.app.gamesuitver2.ui.base.BaseActivity
 import com.app.gamesuitver2.ui.fragment.FormFragment
 import com.app.gamesuitver2.ui.fragment.SliderFragment
 import com.app.gamesuitver2.utils.ViewPagerAdapter
 
-class LandingActivity : AppCompatActivity() {
+class LandingActivity : BaseActivity() {
     private lateinit var binding: ActivityLandingBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

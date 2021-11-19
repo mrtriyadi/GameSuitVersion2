@@ -12,11 +12,12 @@ import androidx.core.view.isVisible
 import com.app.gamesuitver2.databinding.ActivityGameBinding
 import com.app.gamesuitver2.databinding.LayoutCustomDialogBinding
 import com.app.gamesuitver2.ui.activity.DashboardActivity
+import com.app.gamesuitver2.ui.base.BaseActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlin.system.exitProcess
 
-class GameActivity : AppCompatActivity() {
+class GameActivity : BaseActivity() {
     private lateinit var binding: ActivityGameBinding
     private lateinit var dialogBinding: LayoutCustomDialogBinding
     private lateinit var playerName:String
@@ -46,6 +47,8 @@ class GameActivity : AppCompatActivity() {
 
         clearChoice()
         setPlayerChoice()
+
+        // TODO: 19/11/2021 CEK SESI
 
     }
 

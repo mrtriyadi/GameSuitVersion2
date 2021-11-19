@@ -3,8 +3,9 @@ package com.app.gamesuitver2.ui.activity.auth.register
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.gamesuitver2.databinding.ActivityRegisterBinding
+import com.app.gamesuitver2.ui.base.BaseActivity
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterActivity : BaseActivity() {
     private lateinit var binding: ActivityRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
