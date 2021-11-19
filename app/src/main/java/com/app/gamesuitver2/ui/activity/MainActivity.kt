@@ -1,16 +1,16 @@
-package com.renditriyadi.gamesuitver2.ui.main
+package com.app.gamesuitver2.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
-import com.renditriyadi.gamesuitver2.R
-import com.renditriyadi.gamesuitver2.databinding.ActivityMainBinding
-import com.renditriyadi.gamesuitver2.databinding.FragmentFormBinding
-import com.renditriyadi.gamesuitver2.ui.formfragment.FormFragment
-import com.renditriyadi.gamesuitver2.ui.sliderfragment.SliderFragment
-import com.renditriyadi.gamesuitver2.utils.ViewPagerAdapter
+import com.app.gamesuitver2.R
+import com.app.gamesuitver2.databinding.ActivityMainBinding
+import com.app.gamesuitver2.databinding.FragmentFormBinding
+import com.app.gamesuitver2.ui.fragment.FormFragment
+import com.app.gamesuitver2.ui.fragment.SliderFragment
+import com.app.gamesuitver2.utils.ViewPagerAdapter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -69,8 +69,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding.wormDotsIndicator.setViewPager2(binding.vpIntro)
         binding.tvNext.setOnClickListener{
-            lateinit var bindingForm: FragmentFormBinding
-            bindingForm = FragmentFormBinding.inflate(layoutInflater)
+            val bindingForm: FragmentFormBinding = FragmentFormBinding.inflate(layoutInflater)
             if (getNextIndex()!=-1){
                 binding.vpIntro.setCurrentItem(getNextIndex(),true)
             }

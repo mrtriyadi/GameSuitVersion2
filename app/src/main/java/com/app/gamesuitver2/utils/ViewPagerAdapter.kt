@@ -1,4 +1,4 @@
-package com.renditriyadi.gamesuitver2.utils
+package com.app.gamesuitver2.utils
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

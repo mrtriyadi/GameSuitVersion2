@@ -1,4 +1,4 @@
-package com.renditriyadi.gamesuitver2.ui.formfragment
+package com.app.gamesuitver2.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.renditriyadi.gamesuitver2.databinding.FragmentFormBinding
-import com.renditriyadi.gamesuitver2.ui.menu.Menu
+import com.app.gamesuitver2.databinding.FragmentFormBinding
+import com.app.gamesuitver2.ui.activity.Menu
 
 class FormFragment : Fragment() {
 

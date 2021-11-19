@@ -1,5 +1,6 @@
-package com.renditriyadi.gamesuitver2.ui.game
+package com.app.gamesuitver2.ui.game
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -8,15 +9,15 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
+import com.app.gamesuitver2.databinding.ActivityGameBinding
+import com.app.gamesuitver2.databinding.LayoutCustomDialogBinding
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
-import com.renditriyadi.gamesuitver2.databinding.ActivityGameBinding
-import com.renditriyadi.gamesuitver2.databinding.LayoutCustomDialogBinding
-import com.renditriyadi.gamesuitver2.ui.menu.Menu
+import com.app.gamesuitver2.ui.activity.Menu
 import kotlin.system.exitProcess
 
 class Game : AppCompatActivity() {
-    private lateinit var binding:ActivityGameBinding
+    private lateinit var binding: ActivityGameBinding
     private lateinit var dialogBinding: LayoutCustomDialogBinding
     private lateinit var playerName:String
     private lateinit var typeEnemy:String
@@ -252,6 +253,7 @@ class Game : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private fun openDialogPemenang() {
         dialogBinding = LayoutCustomDialogBinding.inflate(layoutInflater)
         val dialog = AlertDialog.Builder(this)

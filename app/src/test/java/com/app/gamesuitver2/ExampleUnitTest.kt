@@ -1,4 +1,4 @@
-package com.renditriyadi.gamesuitver2
+package com.app.gamesuitver2
 
 import org.junit.Test
 

@@ -1,12 +1,11 @@
-package com.renditriyadi.gamesuitver2.ui.menu
+package com.app.gamesuitver2.ui.activity
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.app.gamesuitver2.databinding.ActivityMenuBinding
 import com.google.android.material.snackbar.Snackbar
-import com.renditriyadi.gamesuitver2.databinding.ActivityMenuBinding
-import com.renditriyadi.gamesuitver2.ui.game.Game
+import com.app.gamesuitver2.ui.game.Game
 
 class Menu : AppCompatActivity() {
     private lateinit var binding: ActivityMenuBinding
@@ -42,13 +41,13 @@ class Menu : AppCompatActivity() {
         val intent= Intent(this, Game::class.java)
 
         binding.ivWithFriend.setOnClickListener {
-            intent.putExtra(Game.NAME,"$playerName")
+            intent.putExtra(Game.NAME, playerName)
             intent.putExtra(Game.ENEMY,"Player 2")
             startActivity(intent)
         }
 
         binding.ivWithComp.setOnClickListener {
-            intent.putExtra(Game.NAME,"$playerName")
+            intent.putExtra(Game.NAME, playerName)
             intent.putExtra(Game.ENEMY,"Computer")
             startActivity(intent)
         }

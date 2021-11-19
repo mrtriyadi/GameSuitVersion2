@@ -1,4 +1,4 @@
-package com.renditriyadi.gamesuitver2
+package com.app.gamesuitver2
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
