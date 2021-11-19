@@ -1,11 +1,10 @@
-package com.app.gamesuitver2.ui.activity
+package com.app.gamesuitver2.view.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.gamesuitver2.databinding.ActivityDashboardBinding
-import com.app.gamesuitver2.ui.activity.game.GameActivity
-import com.app.gamesuitver2.ui.base.BaseActivity
+import com.app.gamesuitver2.view.activity.game.GameActivity
+import com.app.gamesuitver2.view.base.BaseActivity
 import com.google.android.material.snackbar.Snackbar
 
 class DashboardActivity : BaseActivity() {

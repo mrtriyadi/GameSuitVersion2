@@ -11,19 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GameSuitVer2">
-        <activity android:name=".ui.activity.ProfileActivity"></activity>
-        <activity android:name=".ui.activity.auth.register.RegisterActivity" />
-        <activity android:name=".ui.activity.auth.login.LoginActivity" />
-        <activity android:name=".ui.activity.game.GameActivity" />
-        <activity android:name=".ui.activity.DashboardActivity" />
-        <activity android:name=".ui.activity.SplashScreen">
+        <activity android:name=".view.activity.ProfileActivity"></activity>
+        <activity android:name=".view.activity.auth.register.RegisterActivity" />
+        <activity android:name=".view.activity.auth.login.LoginActivity" />
+        <activity android:name=".view.activity.game.GameActivity" />
+        <activity android:name=".view.activity.DashboardActivity" />
+        <activity android:name=".view.activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.LandingActivity" />
+        <activity android:name=".view.activity.LandingActivity" />
     </application>
 
 </manifest>

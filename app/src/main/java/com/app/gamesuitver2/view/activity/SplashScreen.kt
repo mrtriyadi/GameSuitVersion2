@@ -1,4 +1,4 @@
-package com.app.gamesuitver2.ui.activity
+package com.app.gamesuitver2.view.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

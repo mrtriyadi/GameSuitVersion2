@@ -1,9 +1,8 @@
-package com.app.gamesuitver2.ui.activity.auth.login
+package com.app.gamesuitver2.view.activity.auth.login
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.gamesuitver2.databinding.ActivityLoginBinding
-import com.app.gamesuitver2.ui.base.BaseActivity
+import com.app.gamesuitver2.view.base.BaseActivity
 
 class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding

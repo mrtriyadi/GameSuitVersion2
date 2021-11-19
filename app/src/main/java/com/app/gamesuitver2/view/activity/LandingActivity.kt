@@ -1,6 +1,5 @@
-package com.app.gamesuitver2.ui.activity
+package com.app.gamesuitver2.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -8,9 +7,9 @@ import androidx.viewpager2.widget.ViewPager2
 import com.app.gamesuitver2.R
 import com.app.gamesuitver2.databinding.ActivityLandingBinding
 import com.app.gamesuitver2.databinding.FragmentFormBinding
-import com.app.gamesuitver2.ui.base.BaseActivity
-import com.app.gamesuitver2.ui.fragment.FormFragment
-import com.app.gamesuitver2.ui.fragment.SliderFragment
+import com.app.gamesuitver2.view.base.BaseActivity
+import com.app.gamesuitver2.view.fragment.FormFragment
+import com.app.gamesuitver2.view.fragment.SliderFragment
 import com.app.gamesuitver2.utils.ViewPagerAdapter
 
 class LandingActivity : BaseActivity() {

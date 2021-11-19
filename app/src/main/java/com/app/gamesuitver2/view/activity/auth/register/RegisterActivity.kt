@@ -1,9 +1,8 @@
-package com.app.gamesuitver2.ui.activity.auth.register
+package com.app.gamesuitver2.view.activity.auth.register
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.app.gamesuitver2.databinding.ActivityRegisterBinding
-import com.app.gamesuitver2.ui.base.BaseActivity
+import com.app.gamesuitver2.view.base.BaseActivity
 
 class RegisterActivity : BaseActivity() {
     private lateinit var binding: ActivityRegisterBinding

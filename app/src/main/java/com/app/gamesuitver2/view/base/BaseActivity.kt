@@ -1,6 +1,5 @@
-package com.app.gamesuitver2.ui.base
+package com.app.gamesuitver2.view.base
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity: AppCompatActivity() {

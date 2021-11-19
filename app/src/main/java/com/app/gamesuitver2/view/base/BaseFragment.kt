@@ -1,4 +1,4 @@
-package com.app.gamesuitver2.ui.base
+package com.app.gamesuitver2.view.base
 
 import androidx.fragment.app.Fragment
 

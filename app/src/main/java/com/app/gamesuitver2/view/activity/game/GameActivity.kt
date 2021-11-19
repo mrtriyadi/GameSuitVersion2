@@ -1,18 +1,16 @@
-package com.app.gamesuitver2.ui.activity.game
+package com.app.gamesuitver2.view.activity.game
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.core.view.isVisible
 import com.app.gamesuitver2.databinding.ActivityGameBinding
 import com.app.gamesuitver2.databinding.LayoutCustomDialogBinding
-import com.app.gamesuitver2.ui.activity.DashboardActivity
-import com.app.gamesuitver2.ui.base.BaseActivity
+import com.app.gamesuitver2.view.activity.DashboardActivity
+import com.app.gamesuitver2.view.base.BaseActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlin.system.exitProcess

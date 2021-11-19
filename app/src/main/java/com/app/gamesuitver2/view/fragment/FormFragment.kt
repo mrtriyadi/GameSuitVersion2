@@ -1,14 +1,13 @@
-package com.app.gamesuitver2.ui.fragment
+package com.app.gamesuitver2.view.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.app.gamesuitver2.databinding.FragmentFormBinding
-import com.app.gamesuitver2.ui.activity.DashboardActivity
-import com.app.gamesuitver2.ui.base.BaseFragment
+import com.app.gamesuitver2.view.activity.DashboardActivity
+import com.app.gamesuitver2.view.base.BaseFragment
 
 class FormFragment : BaseFragment() {
 
