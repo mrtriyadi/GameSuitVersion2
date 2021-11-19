@@ -6,17 +6,17 @@ import android.view.View
 import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
 import com.app.gamesuitver2.R
-import com.app.gamesuitver2.databinding.ActivityMainBinding
+import com.app.gamesuitver2.databinding.ActivityLandingBinding
 import com.app.gamesuitver2.databinding.FragmentFormBinding
 import com.app.gamesuitver2.ui.fragment.FormFragment
 import com.app.gamesuitver2.ui.fragment.SliderFragment
 import com.app.gamesuitver2.utils.ViewPagerAdapter
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class LandingActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLandingBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityLandingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initViewPager()
     }

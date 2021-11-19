@@ -4,4 +4,6 @@
     <string name="text_next">next</string>
     <string name="hint">Put Your Name</string>
     <string name="btn_setname">Set Name</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
 </resources>
