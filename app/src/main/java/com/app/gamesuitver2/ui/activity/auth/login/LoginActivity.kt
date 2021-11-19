@@ -1,9 +1,7 @@
-package com.app.gamesuitver2.ui.activity
+package com.app.gamesuitver2.ui.activity.auth.login
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.gamesuitver2.R
 import com.app.gamesuitver2.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {

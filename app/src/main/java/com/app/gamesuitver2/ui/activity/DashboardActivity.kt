@@ -3,11 +3,12 @@ package com.app.gamesuitver2.ui.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.app.gamesuitver2.databinding.ActivityMenuBinding
+import com.app.gamesuitver2.databinding.ActivityDashboardBinding
+import com.app.gamesuitver2.ui.activity.game.GameActivity
 import com.google.android.material.snackbar.Snackbar
 
-class Menu : AppCompatActivity() {
-    private lateinit var binding: ActivityMenuBinding
+class DashboardActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityDashboardBinding
     private lateinit var playerName:String
 
     companion object{
@@ -16,7 +17,7 @@ class Menu : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMenuBinding.inflate(layoutInflater)
+        binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
         getIntentData()
     }
@@ -37,17 +38,17 @@ class Menu : AppCompatActivity() {
     }
 
     private fun goToGame() {
-        val intent= Intent(this, Game::class.java)
+        val intent= Intent(this, GameActivity::class.java)
 
         binding.ivWithFriend.setOnClickListener {
-            intent.putExtra(Game.NAME, playerName)
-            intent.putExtra(Game.ENEMY,"Player 2")
+            intent.putExtra(GameActivity.NAME, playerName)
+            intent.putExtra(GameActivity.ENEMY,"Player 2")
             startActivity(intent)
         }
 
         binding.ivWithComp.setOnClickListener {
-            intent.putExtra(Game.NAME, playerName)
-            intent.putExtra(Game.ENEMY,"Computer")
+            intent.putExtra(GameActivity.NAME, playerName)
+            intent.putExtra(GameActivity.ENEMY,"Computer")
             startActivity(intent)
         }
     }

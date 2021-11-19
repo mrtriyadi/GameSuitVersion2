@@ -1,4 +1,4 @@
-package com.app.gamesuitver2.ui.activity
+package com.app.gamesuitver2.ui.activity.game
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -11,11 +11,12 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import com.app.gamesuitver2.databinding.ActivityGameBinding
 import com.app.gamesuitver2.databinding.LayoutCustomDialogBinding
+import com.app.gamesuitver2.ui.activity.DashboardActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlin.system.exitProcess
 
-class Game : AppCompatActivity() {
+class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
     private lateinit var dialogBinding: LayoutCustomDialogBinding
     private lateinit var playerName:String
@@ -273,8 +274,8 @@ class Game : AppCompatActivity() {
             clearChoice()
         }
         dialogBinding.btnMenu.setOnClickListener{
-            val intent= Intent(this, Menu::class.java)
-            intent.putExtra(Menu.NAME,playerName)
+            val intent= Intent(this, DashboardActivity::class.java)
+            intent.putExtra(DashboardActivity.NAME,playerName)
             startActivity(intent)
         }
         dialog.show()

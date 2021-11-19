@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.app.gamesuitver2.databinding.FragmentFormBinding
-import com.app.gamesuitver2.ui.activity.Menu
+import com.app.gamesuitver2.ui.activity.DashboardActivity
 
 class FormFragment : Fragment() {
 
@@ -34,8 +34,8 @@ class FormFragment : Fragment() {
     }
 
     private fun navigateToMenu() {
-        val intent = Intent (this.context, Menu::class.java)
-        intent.putExtra(Menu.NAME,"${binding.etName.text}")
+        val intent = Intent (this.context, DashboardActivity::class.java)
+        intent.putExtra(DashboardActivity.NAME,"${binding.etName.text}")
         startActivity(intent)
     }
     /*
