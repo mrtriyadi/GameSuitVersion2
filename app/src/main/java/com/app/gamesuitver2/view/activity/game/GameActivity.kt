@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.isVisible
 import com.app.gamesuitver2.databinding.ActivityGameBinding
 import com.app.gamesuitver2.databinding.LayoutCustomDialogBinding
 import com.app.gamesuitver2.view.activity.DashboardActivity
