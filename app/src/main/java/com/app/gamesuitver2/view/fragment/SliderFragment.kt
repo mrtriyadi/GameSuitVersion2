@@ -8,10 +8,7 @@ import com.app.gamesuitver2.databinding.FragmentSliderBinding
 import com.app.gamesuitver2.view.base.BaseFragment
 
 
-class SliderFragment(
-    private val desc: String,
-    private val imgSrc: Int
-) : BaseFragment() {
+class SliderFragment(private val desc: String, private val imgSrc: Int) : BaseFragment() {
 
     private lateinit var binding: FragmentSliderBinding
 

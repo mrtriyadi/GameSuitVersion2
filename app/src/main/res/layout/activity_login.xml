@@ -38,7 +38,7 @@
         app:srcCompat="@drawable/splash_screen2" />
 
     <TextView
-        android:id="@+id/registerLogo"
+        android:id="@+id/loginLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -54,7 +54,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/etRegisterEmail"
+        android:id="@+id/etLoginEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -71,12 +71,12 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/loginLogo" />
 
 
 
     <EditText
-        android:id="@+id/etRegisterPassword"
+        android:id="@+id/etLoginPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -93,31 +93,33 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etRegisterEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etLoginEmail" />
 
     <Button
         android:id="@+id/goLoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/already_have_an_account"
+        android:text="@string/login"
         android:textAllCaps="false"
         android:enabled="true"
         android:textColor="@color/white"
         android:textSize="13sp"
-        app:layout_constraintStart_toStartOf="@+id/etRegisterPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etRegisterPassword" />
+        app:layout_constraintRight_toLeftOf="@id/btnRegister"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginPassword" />
 
     <Button
-        android:id="@+id/register"
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:enabled="true"
         android:text="@string/register"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/etRegisterPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etRegisterPassword" />
+        app:layout_constraintEnd_toEndOf="@id/etLoginPassword"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLoginPassword" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

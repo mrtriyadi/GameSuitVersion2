@@ -1,5 +1,6 @@
 package com.app.gamesuitver2.view.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -11,6 +12,8 @@ import com.app.gamesuitver2.view.base.BaseActivity
 import com.app.gamesuitver2.view.fragment.FormFragment
 import com.app.gamesuitver2.view.fragment.SliderFragment
 import com.app.gamesuitver2.utils.ViewPagerAdapter
+import com.app.gamesuitver2.view.activity.auth.login.LoginActivity
+import javax.security.auth.login.LoginException
 
 class LandingActivity : BaseActivity() {
     private lateinit var binding: ActivityLandingBinding
@@ -23,21 +26,11 @@ class LandingActivity : BaseActivity() {
 
     private fun initViewPager(){
         val fragmentAdapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
-        fragmentAdapter.addFragment(
-            SliderFragment(
-                "bermain suit dengan teman",
-                R.drawable.landing_page1
-            ), "Landing Page 1"
-        )
-        fragmentAdapter.addFragment(
-            SliderFragment(
-                "bermain suit dengan komputer",
-                R.drawable.landing_page2
-            ), "Landing Page 2"
-        )
-        fragmentAdapter.addFragment(
-            FormFragment(),"Form Fragment"
-        )
+        fragmentAdapter.addFragment(SliderFragment("bermain suit dengan teman", R.drawable.landing_page1), "Landing Page 1")
+        fragmentAdapter.addFragment(SliderFragment("bermain suit dengan komputer", R.drawable.landing_page2), "Landing Page 2")
+//        fragmentAdapter.addFragment(
+//            FormFragment(),"Form Fragment"
+//        )
 
         binding.vpIntro.apply {
             adapter = fragmentAdapter
@@ -69,13 +62,14 @@ class LandingActivity : BaseActivity() {
         }
         binding.wormDotsIndicator.setViewPager2(binding.vpIntro)
         binding.tvNext.setOnClickListener{
-            val bindingForm: FragmentFormBinding = FragmentFormBinding.inflate(layoutInflater)
-            if (getNextIndex()!=-1){
-                binding.vpIntro.setCurrentItem(getNextIndex(),true)
-            }
-            if (bindingForm.etName.text.toString() !="" ){
-                Toast.makeText(this, "${bindingForm.etName.text}", Toast.LENGTH_LONG).show()
-            }
+            startActivity(Intent(this,LoginActivity::class.java))
+//            val bindingForm: FragmentFormBinding = FragmentFormBinding.inflate(layoutInflater)
+//            if (getNextIndex()!=-1){
+//                binding.vpIntro.setCurrentItem(getNextIndex(),true)
+//            }
+//            if (bindingForm.etName.text.toString() !="" ){
+//                Toast.makeText(this, "${bindingForm.etName.text}", Toast.LENGTH_LONG).show()
+//            }
 
         }
 
