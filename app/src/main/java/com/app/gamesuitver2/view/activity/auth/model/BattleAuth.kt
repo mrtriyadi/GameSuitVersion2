@@ -1,4 +1,4 @@
-package com.app.gamesuitver2.view.activity.game.model
+package com.app.gamesuitver2.view.activity.auth.model
 
 import com.app.gamesuitver2.view.activity.auth.model.AuthKey
 

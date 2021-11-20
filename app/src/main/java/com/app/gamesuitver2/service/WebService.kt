@@ -5,7 +5,7 @@ import com.app.gamesuitver2.view.activity.auth.login.model.Login
 import com.app.gamesuitver2.view.activity.auth.model.AuthKey
 import com.app.gamesuitver2.view.activity.auth.model.UserAuth
 import com.app.gamesuitver2.view.activity.auth.register.model.Register
-import com.app.gamesuitver2.view.activity.game.model.BattleAuth
+import com.app.gamesuitver2.view.activity.auth.model.BattleAuth
 import com.app.gamesuitver2.view.activity.game.model.BattleResult
 import com.app.gamesuitver2.view.activity.profile.Profile
 import okhttp3.logging.HttpLoggingInterceptor
