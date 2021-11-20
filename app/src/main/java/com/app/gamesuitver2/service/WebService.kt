@@ -9,8 +9,10 @@ import com.app.gamesuitver2.view.activity.auth.model.BattleAuth
 import com.app.gamesuitver2.view.activity.game.model.BattleResult
 import com.app.gamesuitver2.view.activity.profile.model.Profile
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
@@ -40,19 +42,19 @@ interface WebService {
         }
     }
     @POST(AUTH_REGISTER)
-    suspend fun registerUser(data: Register): Register
+    fun registerUser(@Body data: Register): Response<Register>
     @POST(AUTH_LOGIN)
-    suspend fun loginUser(data: Login): Login
+    fun loginUser(@Body data: Login): Response<Login>
     @GET(AUTH_ME)
-    suspend fun getAuthKey(): AuthKey
+   fun getAuthKey(): Response<AuthKey>
     @GET(BATTLE)
-    suspend fun getBattleResult(): List<BattleResult>
+    fun getBattleResult(data: BattleResult): Response<BattleResult>
     @GET(BATTLE)
-    suspend fun getBattleAuth(): BattleAuth
+    fun getBattleAuth(): Response<BattleAuth>
     @GET(USERS)
-    suspend fun getUserAuth(): UserAuth
+    fun getUserAuth(): Response<UserAuth>
     @PUT(USERS)
-    suspend fun setUserProfile(): List<Profile>
+    fun setUserProfile(@Body data: Profile): Response<Profile>
 
 
 
