@@ -1,4 +1,4 @@
-package com.app.gamesuitver2.view.activity
+package com.app.gamesuitver2.view.activity.profile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
