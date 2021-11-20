@@ -1,4 +1,4 @@
-package com.app.gamesuitver2.view.activity.profile
+package com.app.gamesuitver2.view.activity.profile.model
 
 data class Profile(
     val auth: String? = null,

@@ -7,7 +7,7 @@ import com.app.gamesuitver2.view.activity.auth.model.UserAuth
 import com.app.gamesuitver2.view.activity.auth.register.model.Register
 import com.app.gamesuitver2.view.activity.auth.model.BattleAuth
 import com.app.gamesuitver2.view.activity.game.model.BattleResult
-import com.app.gamesuitver2.view.activity.profile.Profile
+import com.app.gamesuitver2.view.activity.profile.model.Profile
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
