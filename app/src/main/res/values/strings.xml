@@ -4,4 +4,7 @@
     <string name="text_next">next</string>
     <string name="hint">Put Your Name</string>
     <string name="btn_setname">Set Name</string>
+    <string name="field_required">Harap diisi</string>
+    <string name="email_invalid">Masukkan email dengan benar</string>
+    <string name="input_invalid">Masukkan lebih dari 6 huruf</string>
 </resources>

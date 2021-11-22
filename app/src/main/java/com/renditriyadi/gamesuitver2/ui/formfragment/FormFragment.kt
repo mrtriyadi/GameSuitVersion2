@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.renditriyadi.gamesuitver2.databinding.FragmentFormBinding
 import com.renditriyadi.gamesuitver2.ui.menu.Menu
+import com.renditriyadi.gamesuitver2.ui.register.RegisterActivity
 
 class FormFragment : Fragment() {
 
@@ -25,6 +26,11 @@ class FormFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         putName()
+
+        binding.btnRegister.setOnClickListener {
+            val intent = Intent(this.context, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun putName() {
