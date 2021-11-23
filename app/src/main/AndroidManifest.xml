@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GameSuitVer2">
-        <activity android:name=".view.activity.profile.ProfileActivity"></activity>
-        <activity android:name=".view.activity.auth.register.RegisterActivity" />
+        <activity android:name=".view.activity.profile.ProfileActivity" />
+        <activity android:name=".view.activity.auth.register.RegisterActivity"
+            android:theme="@style/Theme.GameSuitVer2.Light"
+            android:screenOrientation="portrait"/>
         <activity android:name=".view.activity.auth.login.LoginActivity" />
         <activity android:name=".view.activity.game.GameActivity" />
         <activity android:name=".view.activity.DashboardActivity" />
