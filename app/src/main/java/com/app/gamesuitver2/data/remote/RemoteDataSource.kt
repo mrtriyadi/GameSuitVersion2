@@ -13,4 +13,6 @@ class RemoteDataSource @Inject constructor(private val gameService: GameService)
 
     suspend fun register(userRegister: UserRegister) = gameService.register(userRegister)
 
+    suspend fun auth(token : String) = gameService.auth(token)
+
 }

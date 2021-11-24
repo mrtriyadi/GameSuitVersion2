@@ -1,5 +1,6 @@
 package com.app.gamesuitver2.data
 
+import android.content.SharedPreferences
 import android.graphics.Bitmap
 import com.google.gson.JsonObject
 import com.app.gamesuitver2.data.remote.RemoteDataSource
@@ -35,8 +36,15 @@ class Repository @Inject constructor(
         }.flowOn(Dispatchers.IO)
     }
 
+    suspend fun auth(token: String) : Flow<NetworkResult<JsonObject>> {
+        return flow<NetworkResult<JsonObject>> {
+            emit(safeApiCall { remoteDataSource.auth("Bearer $token") })
+        }.flowOn(Dispatchers.IO)
+    }
 
-    fun saveImage(image: Bitmap, storageDir: File, imageFileName: String): Flow<Boolean> {
+
+
+        fun saveImage(image: Bitmap, storageDir: File, imageFileName: String): Flow<Boolean> {
 
         val successDirCreated = if (!storageDir.exists()) {
             storageDir.mkdir()

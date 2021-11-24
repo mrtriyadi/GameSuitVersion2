@@ -1,10 +1,12 @@
 package com.app.gamesuitver2.view.activity.auth.login
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
+import com.app.gamesuitver2.R
 import com.app.gamesuitver2.databinding.ActivityLoginBinding
 import com.app.gamesuitver2.viewmodel.LoginViewModel
 import com.app.gamesuitver2.utils.NetworkResult
@@ -29,6 +31,7 @@ class LoginActivity : BaseActivity() {
             when (response) {
                 is NetworkResult.Success -> {
                     response.data?.let {
+                        saveToken(it["data"].asJsonObject["token"].asString)
                         Log.e("LOGIN", "Here is the token: ${it["data"].asJsonObject["token"]}", )
                     }
                     startActivity(Intent(this, GameActivity::class.java))
@@ -53,13 +56,22 @@ class LoginActivity : BaseActivity() {
         }
 
         binding.goLoginButton.setOnClickListener {
-            loginViewModel.login(binding.etLoginEmail.text.toString(),
+            loginViewModel.login(
+                binding.etLoginEmail.text.toString(),
                 binding.etLoginPassword.text.toString())
         }
 
         binding.btnRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
-
     }
+
+    fun saveToken(token : String){
+        val sharedPref = getSharedPreferences("GAME_PREFERENCE", Context.MODE_PRIVATE)
+        with (sharedPref.edit()) {
+            val putInt = putString(getString(R.string.token), token)
+            commit()
+        }
+    }
+
 }
