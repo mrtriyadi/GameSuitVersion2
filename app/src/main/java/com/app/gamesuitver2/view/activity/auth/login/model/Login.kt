@@ -1,6 +1,10 @@
 package com.app.gamesuitver2.view.activity.auth.login.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Login(
-    val email: String? = null,
-    val password: String? = null
+        @field:SerializedName("email")
+        val email: String,
+        @field:SerializedName("password")
+        val password: String
 )
