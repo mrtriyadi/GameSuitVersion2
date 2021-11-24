@@ -59,7 +59,7 @@ interface WebService {
     suspend fun registerUser(@Body body: Register): Response<ResponseBody>
 
     @POST(AUTH_LOGIN)
-    fun loginUser(@Body data: Login): Response<Login>
+    suspend fun loginUser(@Body data: Login): Response<ResponseBody>
 
     @GET(AUTH_ME)
     fun getAuthKey(): Response<AuthKey>

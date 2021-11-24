@@ -6,12 +6,12 @@ import com.app.gamesuitver2.repository.RegisterRepository
 import com.app.gamesuitver2.view.activity.auth.register.model.Register
 import kotlinx.coroutines.*
 
-class RegisterViewModel constructor(private val repository: RegisterRepository) : ViewModel() {
+class RegisterViewModel(private val repository: RegisterRepository) : ViewModel() {
 
     val errorMessage = MutableLiveData<String>()
     val register = MutableLiveData<Register>()
-    var job: Job? = null
-    val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
+    private var job: Job? = null
+    private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
         onError("Exception Handled: ${throwable.localizedMessage}")
     }
 
