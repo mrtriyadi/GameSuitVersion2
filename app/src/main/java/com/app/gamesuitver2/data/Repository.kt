@@ -1,5 +1,6 @@
 package com.app.gamesuitver2.data
 
+import android.content.SharedPreferences
 import android.graphics.Bitmap
 import com.google.gson.JsonObject
 import com.app.gamesuitver2.data.remote.RemoteDataSource
@@ -15,12 +16,14 @@ import kotlinx.coroutines.flow.flowOn
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
+import java.security.PrivateKey
 import javax.inject.Inject
 
 
 @ActivityRetainedScoped
 class Repository @Inject constructor(
-    private val remoteDataSource: RemoteDataSource
+    private val remoteDataSource: RemoteDataSource,
+    private val sharedPreferences: SharedPreferences
 ) : BaseApiResponse() {
 
     suspend fun login(userLogin: UserLogin) : Flow<NetworkResult<JsonObject>> {
@@ -35,8 +38,15 @@ class Repository @Inject constructor(
         }.flowOn(Dispatchers.IO)
     }
 
+    suspend fun auth(token: String) : Flow<NetworkResult<JsonObject>> {
+        return flow<NetworkResult<JsonObject>> {
+            emit(safeApiCall { remoteDataSource.auth("Bearer $token") })
+        }.flowOn(Dispatchers.IO)
+    }
 
-    fun saveImage(image: Bitmap, storageDir: File, imageFileName: String): Flow<Boolean> {
+
+
+        fun saveImage(image: Bitmap, storageDir: File, imageFileName: String): Flow<Boolean> {
 
         val successDirCreated = if (!storageDir.exists()) {
             storageDir.mkdir()

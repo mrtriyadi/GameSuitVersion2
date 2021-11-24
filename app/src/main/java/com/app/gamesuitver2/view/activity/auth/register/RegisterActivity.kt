@@ -46,7 +46,8 @@ class RegisterActivity : BaseActivity() {
         }
 
         binding.register.setOnClickListener {
-            registerViewModel.register(binding.etRegisterEmail.text.toString(),
+            registerViewModel.register(
+                binding.etRegisterEmail.text.toString(),
                 binding.etRegisterUsername.text.toString(),
                 binding.etRegisterPassword.text.toString())
         }
