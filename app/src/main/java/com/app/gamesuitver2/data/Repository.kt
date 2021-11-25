@@ -16,12 +16,14 @@ import kotlinx.coroutines.flow.flowOn
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
+import java.security.PrivateKey
 import javax.inject.Inject
 
 
 @ActivityRetainedScoped
 class Repository @Inject constructor(
-    private val remoteDataSource: RemoteDataSource
+    private val remoteDataSource: RemoteDataSource,
+    private val sharedPreferences: SharedPreferences
 ) : BaseApiResponse() {
 
     suspend fun login(userLogin: UserLogin) : Flow<NetworkResult<JsonObject>> {
