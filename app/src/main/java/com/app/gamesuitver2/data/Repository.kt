@@ -22,8 +22,7 @@ import javax.inject.Inject
 
 @ActivityRetainedScoped
 class Repository @Inject constructor(
-    private val remoteDataSource: RemoteDataSource,
-    private val sharedPreferences: SharedPreferences
+    private val remoteDataSource: RemoteDataSource
 ) : BaseApiResponse() {
 
     suspend fun login(userLogin: UserLogin) : Flow<NetworkResult<JsonObject>> {
