@@ -1,5 +1,6 @@
 package com.app.gamesuitver2.data.remote
 
+import com.app.gamesuitver2.model.UserBattlePost
 import com.app.gamesuitver2.utils.Constants
 import com.google.gson.JsonObject
 import com.app.gamesuitver2.model.UserLogin
@@ -21,5 +22,9 @@ interface GameService {
     @Headers("Content-Type: application/json", "Accept:application/json")
     @GET(Constants.AUTH_URL)
     suspend fun auth(@Header("Authorization") token : String) : Response<JsonObject>
+
+    @Headers("Content-Type: application/json", "Accept:application/json")
+    @POST(Constants.BATTLE_POST_URL)
+    suspend fun postBattle(@Header("Authorization") token : String, @Body userBattlePost: UserBattlePost) : Response<JsonObject>
 
 }

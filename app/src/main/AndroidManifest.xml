@@ -17,6 +17,9 @@
             android:name=".view.activity.history.HistoryActivity"
             android:exported="false" />
         <activity
+            android:name=".media.InternetVideoActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.activity.menu.MenuActivity"
             android:exported="false" />
         <activity android:name=".view.activity.profile.ProfileActivity" />

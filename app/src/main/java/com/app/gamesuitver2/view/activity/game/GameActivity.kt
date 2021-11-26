@@ -1,22 +1,35 @@
 package com.app.gamesuitver2.view.activity.game
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
+import com.app.gamesuitver2.R
 import com.app.gamesuitver2.databinding.ActivityGameBinding
 import com.app.gamesuitver2.databinding.LayoutCustomDialogBinding
+import com.app.gamesuitver2.model.UserBattlePost
 import com.app.gamesuitver2.view.activity.DashboardActivity
+import com.app.gamesuitver2.view.activity.SplashScreen
+import com.app.gamesuitver2.view.activity.auth.register.RegisterActivity
 import com.app.gamesuitver2.view.base.BaseActivity
+import com.app.gamesuitver2.viewmodel.GameViewModel
+import com.app.gamesuitver2.viewmodel.SplashScreenViewModel
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import kotlin.system.exitProcess
 
+@AndroidEntryPoint
 class GameActivity : BaseActivity() {
+
+    private val gameViewModel by viewModels<GameViewModel>()
+
     private lateinit var binding: ActivityGameBinding
     private lateinit var dialogBinding: LayoutCustomDialogBinding
     private lateinit var playerName:String
@@ -41,6 +54,7 @@ class GameActivity : BaseActivity() {
 
         dismissIconClicked()
         refreshIconClicked()
+        logoutIconClicked()
 
         //openDialogPemenang()
 
@@ -49,6 +63,17 @@ class GameActivity : BaseActivity() {
 
         // TODO: 19/11/2021 CEK SESI
 
+    }
+
+    private fun logoutIconClicked() {
+        binding.ivLogout.setOnClickListener {
+            val sharedPref = getSharedPreferences("GAME_PREFERENCE", Context.MODE_PRIVATE)
+            with (sharedPref.edit()) {
+                val putInt = putString(getString(R.string.token), "EMPTY")
+                commit()
+            }
+            startActivity(Intent(this, SplashScreen::class.java))
+        }
     }
 
     private fun clearChoice() {
@@ -275,11 +300,24 @@ class GameActivity : BaseActivity() {
             dialog.dismiss()
             clearChoice()
         }
+        var postMessage = ""
+        if (dialogBinding.tvPemenang.text == "MENANG")
+            postMessage = "Player Win"
+        else if (dialogBinding.tvPemenang.text == "KALAH")
+            postMessage = "Opponent Win"
+        else
+            postMessage = "Draw"
+        gameViewModel.postBattle(getSavedToken(), "Singleplayer", postMessage)
         dialogBinding.btnMenu.setOnClickListener{
             val intent= Intent(this, DashboardActivity::class.java)
             intent.putExtra(DashboardActivity.NAME,playerName)
             startActivity(intent)
         }
         dialog.show()
+    }
+
+    private fun getSavedToken() : String {
+        val sharedPref = getSharedPreferences("GAME_PREFERENCE", Context.MODE_PRIVATE)
+        return sharedPref.getString(getString(R.string.token),"EMPTY")!!
     }
 }

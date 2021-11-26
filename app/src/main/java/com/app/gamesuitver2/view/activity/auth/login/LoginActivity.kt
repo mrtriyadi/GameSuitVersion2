@@ -43,7 +43,7 @@ class LoginActivity : BaseActivity() {
                     var message : String = ""
                     response.data?.let {
                         Log.e("SETTING-error", "onCreate: ${it.toString()}", )
-                        message = it["errors"].toString()
+                        message = it["errors"].asString
                     }
                     if (message.contains('{'))
                         message = response.message.toString()

@@ -12,6 +12,7 @@ import com.app.gamesuitver2.R
 import com.app.gamesuitver2.databinding.ActivitySplashScreenBinding
 import com.app.gamesuitver2.utils.NetworkResult
 import com.app.gamesuitver2.view.activity.game.GameActivity
+import com.app.gamesuitver2.view.activity.menu.MenuActivity
 import com.app.gamesuitver2.viewmodel.SplashScreenViewModel
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,7 +40,7 @@ class SplashScreen : AppCompatActivity() {
         Handler (Looper.getMainLooper()).postDelayed({
             splashScreenViewModel.authResponse.observe(this){ response ->
                 if (response is NetworkResult.Success)
-                    startActivity(Intent(this, GameActivity::class.java))
+                    startActivity(Intent(this, MenuActivity::class.java))
                 else
                     startActivity(Intent(this, LandingActivity::class.java))
             }

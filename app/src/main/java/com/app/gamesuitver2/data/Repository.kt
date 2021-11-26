@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import com.google.gson.JsonObject
 import com.app.gamesuitver2.data.remote.RemoteDataSource
 import com.app.gamesuitver2.model.BaseApiResponse
+import com.app.gamesuitver2.model.UserBattlePost
 import com.app.gamesuitver2.model.UserLogin
 import com.app.gamesuitver2.model.UserRegister
 import com.app.gamesuitver2.utils.NetworkResult
@@ -40,6 +41,13 @@ class Repository @Inject constructor(
     suspend fun auth(token: String) : Flow<NetworkResult<JsonObject>> {
         return flow<NetworkResult<JsonObject>> {
             emit(safeApiCall { remoteDataSource.auth("Bearer $token") })
+        }.flowOn(Dispatchers.IO)
+    }
+
+    suspend fun postBattle(token: String, userBattlePost: UserBattlePost) : Flow<NetworkResult<JsonObject>> {
+        return flow<NetworkResult<JsonObject>> {
+            //emit(safeApiCall { remoteDataSource.auth("Bearer $token") })
+            emit(safeApiCall { remoteDataSource.postBattle("Bearer $token", userBattlePost) })
         }.flowOn(Dispatchers.IO)
     }
 
