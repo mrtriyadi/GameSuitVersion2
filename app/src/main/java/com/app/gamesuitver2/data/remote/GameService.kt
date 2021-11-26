@@ -27,4 +27,8 @@ interface GameService {
     @POST(Constants.BATTLE_POST_URL)
     suspend fun postBattle(@Header("Authorization") token : String, @Body userBattlePost: UserBattlePost) : Response<JsonObject>
 
+    @Headers("Content-Type: application/json", "Accept:application/json")
+    @GET(Constants.BATTLE_POST_URL)
+    suspend fun getBattle(@Header("Authorization") token : String) : Response<JsonObject>
+
 }

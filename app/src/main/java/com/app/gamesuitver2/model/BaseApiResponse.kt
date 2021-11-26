@@ -19,9 +19,7 @@ abstract class BaseApiResponse {
                     return NetworkResult.Success(body)
                 }
             }
-            //val errMessage : T? = Gson().fromJson<T>(response.errorBody().toString(), JsonObject::class.java)
             val errMessage = Gson().fromJson<T>(response.errorBody()?.charStream()?.readText(), JsonObject::class.java)
-            //return NetworkResult.Error("${response.code()} ${response.message()}", errMessage)
             return NetworkResult.Error("${response.code()} ${response.message()}", errMessage)
         } catch (e: Exception) {
             return error(e.message ?: e.toString())

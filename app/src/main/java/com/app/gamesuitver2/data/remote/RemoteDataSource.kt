@@ -7,9 +7,6 @@ import javax.inject.Inject
 
 class RemoteDataSource @Inject constructor(private val gameService: GameService) {
 
-//    suspend fun getDog() =
-//        gameService.getDog()
-
     suspend fun login(userLogin: UserLogin) = gameService.login(userLogin)
 
     suspend fun register(userRegister: UserRegister) = gameService.register(userRegister)
@@ -17,5 +14,7 @@ class RemoteDataSource @Inject constructor(private val gameService: GameService)
     suspend fun auth(token : String) = gameService.auth(token)
 
     suspend fun postBattle(token : String, userBattlePost: UserBattlePost) = gameService.postBattle(token, userBattlePost)
+
+    suspend fun getBattle(token : String) = gameService.getBattle(token)
 
 }

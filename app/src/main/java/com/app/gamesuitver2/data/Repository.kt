@@ -51,6 +51,12 @@ class Repository @Inject constructor(
         }.flowOn(Dispatchers.IO)
     }
 
+    suspend fun getBattle(token: String) : Flow<NetworkResult<JsonObject>> {
+        return flow<NetworkResult<JsonObject>> {
+            emit(safeApiCall { remoteDataSource.getBattle("Bearer $token") })
+        }.flowOn(Dispatchers.IO)
+    }
+
 
 
         fun saveImage(image: Bitmap, storageDir: File, imageFileName: String): Flow<Boolean> {

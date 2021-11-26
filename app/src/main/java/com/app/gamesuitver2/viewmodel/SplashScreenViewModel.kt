@@ -20,9 +20,7 @@ class SplashScreenViewModel @Inject constructor
 
     var authResponse  : MutableLiveData<NetworkResult<JsonObject>> = MutableLiveData()
 
-    //fun login() = viewModelScope.launch {
     fun auth(token : String) = viewModelScope.launch {
-        //repository.login(UserLogin(email, password)).collect { value ->
         repository.auth(token).collect { value ->
             authResponse.value = value
         }
